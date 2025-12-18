@@ -1,7 +1,7 @@
 import Foundation
 class DataManager: Observable {
     var cars: [Car] = []
-     
+    
     func loadCars() async {
        
         
@@ -10,8 +10,8 @@ class DataManager: Observable {
             try await Task.sleep(for: .seconds(1))
             
             //load cars
-            let data: [Car] = load("cars.json")
-            cars = data
+            let data: CarsResponse = load("cars.json")
+            cars = data.cars
             
             print("✅ Data loaded successfully.")
         } catch {

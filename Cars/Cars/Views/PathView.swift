@@ -13,12 +13,11 @@ struct PathView: View {
     var body: some View {
         Group {
             switch destination {
-            
+            case let .car(car):
+                CarDetailView(car: car)
             }
         }
     }
 }
 
-#Preview {
-    PathView()
-}
+
